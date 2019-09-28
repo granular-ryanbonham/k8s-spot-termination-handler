@@ -31,6 +31,8 @@ def main():
             result = call(kube_command)
             if result == 0:
                 print('Node Drain successful')
+                # Sleep so we do not restart before node is fully drained. 
+                sleep(120)
                 break
 
         else:
